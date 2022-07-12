@@ -1,5 +1,5 @@
 //새로고침시 상단으로 이동
-history.scrollRestoration = "manual"
+// history.scrollRestoration = "manual"
 
 //사이트 전체길이
 let maxScrollValue = document.body.offsetHeight - window.innerHeight;

@@ -1194,8 +1194,13 @@ main .sec-ban .ban-01 .ban-btn .more p {
   color: #fff;
   font-size: 1.2rem;
   padding-right: 20px;
+  transform: translateY(0%);
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main .sec-ban .ban-01 .ban-btn .more p:nth-of-type(2) {
+  position: absolute;
+  left: 20%;
+  top: 20%;
   padding-right: 0;
 }
 main .sec-ban .ban-01 .ban-btn .more p:nth-of-type(2)::before {
@@ -1248,11 +1253,13 @@ main .sec-ban .ban-02 .ban-btn hgroup span {
   visibility: hidden;
 }
 main .sec-ban .ban-02 .ban-btn .more {
+  position: relative;
   margin-top: 30px;
   display: flex;
   align-items: center;
   overflow: hidden;
   visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main .sec-ban .ban-02 .ban-btn .more p {
   margin: 0;
@@ -1260,8 +1267,13 @@ main .sec-ban .ban-02 .ban-btn .more p {
   color: #fff;
   font-size: 1.2rem;
   padding-right: 20px;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateY(0%);
 }
 main .sec-ban .ban-02 .ban-btn .more p:nth-of-type(2) {
+  position: absolute;
+  left: 20%;
+  top: 20%;
   padding-right: 0;
 }
 main .sec-ban .ban-02 .ban-btn .more p:nth-of-type(2)::before {
@@ -1275,10 +1287,25 @@ main .sec-ban .ban-02 .ban-btn .more div {
   display: flex;
   flex-wrap: wrap;
   display: none;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main .sec-ban .ban-02 .ban-btn .more div span {
   width: 100%;
   border-top: thin solid #fff;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateY(100%);
+}
+main .sec-ban .more:hover p {
+  transform: translateY(100%);
+}
+main .sec-ban .more:hover p:nth-of-type(2)::before {
+  transform: translateX(100%);
+}
+main .sec-ban .more:hover div {
+  display: block;
+}
+main .sec-ban .more:hover div span {
+  transform: translateY(0%);
 }
 main h4.ani {
   -webkit-animation: txt1 0.5s ease forwards;
