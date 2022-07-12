@@ -22,6 +22,8 @@ html,
 body {
   font-size: 12px;
   margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 header .logobox {
@@ -46,9 +48,6 @@ header .logobox h2 a {
   height: 27px;
   background: url("../img/logo/logo-vac-nav-bk.png") 0% 0%/100% no-repeat;
   transition: 0.4s ease;
-}
-header .logobox .buger {
-  width: 12%;
 }
 header .logobox .buger span:nth-of-type(1) {
   transform-origin: left center;
@@ -795,10 +794,10 @@ main section .company .movebox2 span {
   font-size: 1.35rem;
   line-height: 1.5;
   overflow: hidden;
+  visibility: hidden;
 }
-main section .company a {
+main section .company .Abtn {
   position: relative;
-  font-size: 0.9rem;
   display: inline-block;
   font-size: 1.1rem;
   font-weight: 700;
@@ -806,136 +805,39 @@ main section .company a {
   padding: 12px 28px;
   margin-top: 36px;
   text-transform: uppercase;
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   color: #111111;
   overflow: hidden;
 }
-main section .company a .btn1 {
-  position: relative;
-  display: block;
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0%);
-}
-main section .company a .btn1::before {
+main section .company .Abtn::before {
   content: "view our story";
   position: absolute;
+  display: block;
+  text-align: center;
   top: 50%;
-  left: 0;
+  left: 0%;
   width: 100%;
   transform: translateY(100%);
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  visibility: hidden;
-  opacity: 0;
-  -webkit-animation: on2 all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
-          animation: on2 all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-@-webkit-keyframes on2 {
-  100% {
-    transform: translateY(-50%);
-    opacity: 1;
-    visibility: visible;
-  }
+main section .company .Abtn .btn1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  display: block;
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  opacity: 1;
+  transform: translateY(0%);
 }
-@keyframes on2 {
-  100% {
-    transform: translateY(-50%);
-    opacity: 1;
-    visibility: visible;
-  }
-}
-main section .company a:active {
+main section .company a:hover {
   color: #1fc77c;
   border: 1px solid #1fc77c;
-  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
-main section .company a .btn1:active {
-  -webkit-animation: on all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
-          animation: on all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards;
+main section .company a:hover::before {
+  transform: translateY(-50%);
 }
-@-webkit-keyframes on {
-  0% {
-    display: block;
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
-    visibility: hidden;
-  }
-}
-@keyframes on {
-  0% {
-    display: block;
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-100%);
-    visibility: hidden;
-  }
-}
-main section h4.ani {
-  -webkit-animation: txt1 0.5s ease forwards;
-          animation: txt1 0.5s ease forwards;
-  visibility: visible !important;
-}
-main section span.ani2 {
-  -webkit-animation: txt2 0.5s ease-out forwards;
-          animation: txt2 0.5s ease-out forwards;
-  visibility: visible !important;
-}
-main section div.ani3 {
-  -webkit-animation: txt3 0.7s ease-out forwards;
-          animation: txt3 0.7s ease-out forwards;
-  visibility: visible !important;
-}
-@-webkit-keyframes txt1 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes txt1 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@-webkit-keyframes txt2 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes txt2 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@-webkit-keyframes txt3 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-@keyframes txt3 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+main section .company a:hover .btn1 {
+  transform: translateY(-130%);
 }
 main .ser {
   margin: 10% 5%;
@@ -943,6 +845,9 @@ main .ser {
 main .ser h4 {
   color: #262626;
   font-size: 1.52rem;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
 }
 main section .servicese ul {
   display: flex;
@@ -951,15 +856,22 @@ main section .servicese ul {
 }
 main section .servicese ul li {
   position: relative;
+  visibility: hidden;
   width: 49%;
   margin-bottom: 5px;
+  transform: translateY(100%);
 }
-main section .servicese ul li p {
+main section .servicese ul li .pimgbox {
   margin: 0;
   vertical-align: middle;
+  overflow: hidden;
+  visibility: hidden;
+  transform: translateY(100%);
 }
-main section .servicese ul li p img {
+main section .servicese ul li .pimgbox img {
+  vertical-align: middle;
   width: 100%;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main section .servicese ul li div {
   position: absolute;
@@ -969,8 +881,10 @@ main section .servicese ul li div {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 10px;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   color: #FFF;
+  transform: translateY(0%);
 }
 main section .servicese ul li div h5 {
   display: inline-block;
@@ -979,11 +893,19 @@ main section .servicese ul li div h5 {
   line-height: 1.3;
   color: #fff;
 }
-main section .servicese ul li div p {
+main section .servicese ul li div .plus {
+  width: 15%;
   display: inline-block;
   margin: 0;
   font-size: 2.35rem;
-  padding-left: 20px;
+  opacity: 0;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+main section .servicese ul li:hover div {
+  transform: translateY(-20%);
+}
+main section .servicese ul li:hover div .plus {
+  opacity: 1;
 }
 main .inf {
   margin: 10% 5%;
@@ -1014,8 +936,10 @@ main .infer ul li .imgbox {
   overflow: hidden;
 }
 main .infer ul li .imgbox img {
+  vertical-align: middle;
   width: 100%;
   min-height: 100%;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main .infer ul li div h5 {
   display: inline-block;
@@ -1041,6 +965,9 @@ main .infer ul li:nth-of-type(n+3):nth-of-type(-n+4) .imgbox {
   vertical-align: middle;
   overflow: hidden;
 }
+main ul li .imgbox img:hover {
+  transform: scale(1.2);
+}
 main .exp-sec {
   margin: 0;
   background: url("../img/export/composition-m.jpg") center center/cover no-repeat;
@@ -1059,11 +986,17 @@ main .exp-sec .exp-margin .exp hgroup h4 {
   color: #fff;
 }
 main .exp-sec .exp-margin .exp hgroup h2 {
+  overflow: hidden;
+  visibility: hidden;
+}
+main .exp-sec .exp-margin .exp hgroup span {
   margin: 0;
+  margin-left: 6px;
   color: #EEECE6;
   font-size: 2.67rem;
   font-weight: 800;
   line-height: 1.2;
+  visibility: hidden;
 }
 main .exp-sec .exp-margin .exp ul {
   padding-top: 30px;
@@ -1089,7 +1022,9 @@ main .exp-sec .exp-margin .exp ul li p {
   filter: grayscale(70%);
 }
 main .exp-sec .exp-margin .exp ul li p img {
+  vertical-align: middle;
   width: 100%;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main .exp-sec .exp-margin .exp ul li .logo-txt {
   color: #ccc;
@@ -1101,11 +1036,17 @@ main section .port h4 {
   font-size: 1.52rem;
 }
 main section .port h2 {
+  overflow: hidden;
+  visibility: hidden;
+}
+main section .port span {
   margin: 0;
+  margin-right: 6px;
   color: #333;
   font-size: 2.67rem;
   font-weight: 800;
   line-height: 1.2;
+  visibility: hidden;
 }
 main section .portfolio ul {
   margin-top: 30px;
@@ -1118,16 +1059,19 @@ main section .portfolio ul li {
   width: 49%;
   padding-bottom: 20px;
 }
-main section .portfolio ul li p {
+main section .portfolio ul li .pimgbox {
   width: 100%;
   max-height: 229.31px;
   margin: 0;
   vertical-align: middle;
   overflow: hidden;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform-style: preserve-3d;
 }
-main section .portfolio ul li p img {
+main section .portfolio ul li .pimgbox img {
   width: 100%;
   vertical-align: middle;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main section .portfolio ul li .port-txt h4 {
   margin-top: 16px;
@@ -1158,6 +1102,7 @@ main section .portfolio ul li .port-txt div div span {
 main section .news h4 {
   color: #262626;
   font-size: 1.52rem;
+  visibility: hidden;
 }
 main section .sec-news ul {
   display: flex;
@@ -1167,13 +1112,14 @@ main section .sec-news ul {
 main section .sec-news ul li {
   width: 49%;
 }
-main section .sec-news ul li p {
+main section .sec-news ul li .pimgbox {
   vertical-align: middle;
   overflow: hidden;
 }
-main section .sec-news ul li p img {
+main section .sec-news ul li .pimgbox img {
   width: 100%;
   vertical-align: middle;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 main section .sec-news ul li div h4 {
   color: #262626;
@@ -1213,11 +1159,22 @@ main .sec-ban .ban-01 .ban-btn hgroup h5 {
   font-size: 1.52rem;
 }
 main .sec-ban .ban-01 .ban-btn hgroup h2 {
+  overflow: hidden;
   margin: 0;
+}
+main .sec-ban .ban-01 .ban-btn hgroup h2 div {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+main .sec-ban .ban-01 .ban-btn hgroup span {
+  margin: 0;
+  margin-right: 6px;
   color: #EEECE6;
   font-size: 2.047rem;
   font-weight: 800;
   line-height: 1.2;
+  visibility: hidden;
 }
 main .sec-ban .ban-01 .ban-btn div {
   margin-top: 30px;
@@ -1266,11 +1223,22 @@ main .sec-ban .ban-02 .ban-btn hgroup h5 {
   font-size: 1.52rem;
 }
 main .sec-ban .ban-02 .ban-btn hgroup h2 {
+  overflow: hidden;
   margin: 0;
+}
+main .sec-ban .ban-02 .ban-btn hgroup h2 div {
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+main .sec-ban .ban-02 .ban-btn hgroup span {
+  margin: 0;
+  margin-right: 6px;
   color: #EEECE6;
   font-size: 2.047rem;
   font-weight: 800;
   line-height: 1.2;
+  visibility: hidden;
 }
 main .sec-ban .ban-02 .ban-btn div {
   margin-top: 30px;
@@ -1303,6 +1271,178 @@ main .sec-ban .ban-02 .ban-btn div div span {
   width: 100%;
   border-top: thin solid #fff;
 }
+main h4.ani {
+  -webkit-animation: txt1 0.5s ease forwards;
+          animation: txt1 0.5s ease forwards;
+  visibility: visible !important;
+}
+@-webkit-keyframes txt1 {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes txt1 {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+main ul li .pimgbox img:hover {
+  transform: scale(1.2);
+}
+main li.over {
+  visibility: visible !important;
+  -webkit-animation: openimg 0.8s ease forwards;
+          animation: openimg 0.8s ease forwards;
+}
+main .over .pimgbox.overp {
+  visibility: visible !important;
+  -webkit-animation: openP 0.8s ease forwards;
+          animation: openP 0.8s ease forwards;
+}
+main .over div.overdiv {
+  visibility: visible !important;
+  -webkit-animation: opendiv 0.8s ease forwards;
+          animation: opendiv 0.8s ease forwards;
+}
+@-webkit-keyframes openimg {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes openimg {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes openP {
+  0% {
+    transform: translateY(100%) scaleY(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes openP {
+  0% {
+    transform: translateY(100%) scaleY(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes opendiv {
+  0% {
+    transform: translateY(100%) scaleY(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+    opacity: 1;
+  }
+}
+@keyframes opendiv {
+  0% {
+    transform: translateY(100%) scaleY(1.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%) scaleY(1);
+    opacity: 1;
+  }
+}
+main div.ani2 {
+  -webkit-animation: txt2 1s ease forwards;
+          animation: txt2 1s ease forwards;
+  visibility: visible !important;
+}
+main .ani2 span.open {
+  -webkit-animation: open 1s ease forwards;
+          animation: open 1s ease forwards;
+  visibility: visible !important;
+}
+main .ani3 span.open {
+  -webkit-animation: open 1s ease forwards;
+          animation: open 1s ease forwards;
+  visibility: visible !important;
+}
+@-webkit-keyframes open {
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes open {
+  0% {
+    transform: translateY(120%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+main div.ani3 {
+  -webkit-animation: txt3 0.8s ease forwards;
+          animation: txt3 0.8s ease forwards;
+  visibility: visible !important;
+}
+@-webkit-keyframes txt2 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes txt2 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@-webkit-keyframes txt3 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes txt3 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
 footer .footerbox {
   background-color: #262626;
 }
@@ -1348,7 +1488,8 @@ footer .footerbox .va-info .BN {
   padding-right: 32px;
   font-size: 300;
 }
-footer .footerbox .va-info a {
+footer .footerbox .va-info .Abtn {
+  position: relative;
   display: inline-block;
   color: #f9f9f9;
   font-size: 1.1rem;
@@ -1356,10 +1497,39 @@ footer .footerbox .va-info a {
   border: 1px solid #f9f9f9;
   padding: 12px 28px;
   margin-top: 15px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+footer .footerbox .va-info .Abtn::before {
+  content: "DOWNLOAD";
+  position: absolute;
+  display: block;
+  text-align: center;
+  top: 50%;
+  left: 0%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+footer .footerbox .va-info .Abtn .btn1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  position: relative;
+  display: block;
+  transition: 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  opacity: 1;
+  transform: translateY(0%);
 }
 footer .footerbox .va-info a:hover {
-  color: #2ff39b;
-  border: 1px solid #2ff39b;
+  color: #1fc77c;
+  border: 1px solid #1fc77c;
+}
+footer .footerbox .va-info a:hover::before {
+  transform: translateY(-50%);
+}
+footer .footerbox .va-info a:hover .btn1 {
+  transform: translateY(-130%);
 }
 footer .footerbox .va-info::after {
   content: "";
@@ -1375,11 +1545,11 @@ footer .footerbox .copy-sns {
   justify-content: space-between;
   align-items: center;
 }
-footer .footerbox .copy-sns a {
+footer .footerbox .copy-sns .logo {
   display: inline-block;
   width: 110px;
   height: 27px;
-  background: url("../img/logo/logo-vac-nav-bk.png") 0% 0%/100% no-repeat;
+  background: url("../img/logo/logo-vac-nav.png") 0% 0%/100% no-repeat;
 }
 footer .footerbox .copy-sns div {
   width: 50%;
@@ -1387,7 +1557,7 @@ footer .footerbox .copy-sns div {
   align-items: center;
   justify-content: flex-end;
 }
-footer .footerbox .copy-sns div p {
+footer .footerbox .copy-sns div a {
   display: inline-block;
   opacity: 0.5;
   font-size: 1.7rem;
@@ -1395,15 +1565,15 @@ footer .footerbox .copy-sns div p {
   margin: 0;
   padding-right: 30px;
 }
-footer .footerbox .copy-sns div p:nth-of-type(2) {
+footer .footerbox .copy-sns div a:nth-of-type(2) {
   padding-right: 0px;
 }
-footer .footerbox .copy-sns div .p:nth-of-type(1):before {
+footer .footerbox .copy-sns div .a:nth-of-type(1):before {
   font-family: "FontAwesome";
   content: "\e055";
   margin: 0;
 }
-footer .footerbox .copy-sns div .p:nth-of-type(2):before {
+footer .footerbox .copy-sns div .a:nth-of-type(2):before {
   font-family: "FontAwesome";
   content: "\f167";
   display: inline-block;

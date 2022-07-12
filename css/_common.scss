@@ -27,8 +27,12 @@ li {
     margin: 0;
 }
 
+
 html,
 body {
     font-size: $font-defualt;
-    margin: $pageMargin
+    margin: $pageMargin;
+    width: 100%;
+    overflow-x: hidden;
+
 }
