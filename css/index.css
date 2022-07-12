@@ -857,6 +857,7 @@ main section .servicese ul {
 main section .servicese ul li {
   position: relative;
   visibility: hidden;
+  overflow: hidden;
   width: 49%;
   margin-bottom: 5px;
   transform: translateY(100%);
@@ -926,6 +927,7 @@ main .infer ul {
 }
 main .infer ul li {
   margin-bottom: 30px;
+  overflow: hidden;
 }
 main .infer ul li .imgbox {
   width: 100%;
@@ -1121,6 +1123,9 @@ main section .sec-news ul li .pimgbox img {
   vertical-align: middle;
   transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+main section .sec-news ul li div {
+  overflow: hidden;
+}
 main section .sec-news ul li div h4 {
   color: #262626;
   font-size: 1.52rem;
@@ -1176,34 +1181,36 @@ main .sec-ban .ban-01 .ban-btn hgroup span {
   line-height: 1.2;
   visibility: hidden;
 }
-main .sec-ban .ban-01 .ban-btn div {
+main .sec-ban .ban-01 .ban-btn .more {
   margin-top: 30px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  visibility: hidden;
 }
-main .sec-ban .ban-01 .ban-btn div p {
+main .sec-ban .ban-01 .ban-btn .more p {
   margin: 0;
   font-weight: 700;
   color: #fff;
   font-size: 1.2rem;
   padding-right: 20px;
 }
-main .sec-ban .ban-01 .ban-btn div p:nth-of-type(2) {
+main .sec-ban .ban-01 .ban-btn .more p:nth-of-type(2) {
   padding-right: 0;
 }
-main .sec-ban .ban-01 .ban-btn div p:nth-of-type(2)::before {
+main .sec-ban .ban-01 .ban-btn .more p:nth-of-type(2)::before {
   font-family: "FontAwesome";
   content: "\f105";
   display: inline-block;
   margin: 0;
   padding: 0;
 }
-main .sec-ban .ban-01 .ban-btn div div {
+main .sec-ban .ban-01 .ban-btn .more div {
   display: flex;
   flex-wrap: wrap;
   display: none;
 }
-main .sec-ban .ban-01 .ban-btn div div span {
+main .sec-ban .ban-01 .ban-btn .more div span {
   width: 100%;
   border-top: thin solid #fff;
 }
@@ -1240,34 +1247,36 @@ main .sec-ban .ban-02 .ban-btn hgroup span {
   line-height: 1.2;
   visibility: hidden;
 }
-main .sec-ban .ban-02 .ban-btn div {
+main .sec-ban .ban-02 .ban-btn .more {
   margin-top: 30px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  visibility: hidden;
 }
-main .sec-ban .ban-02 .ban-btn div p {
+main .sec-ban .ban-02 .ban-btn .more p {
   margin: 0;
   font-weight: 700;
   color: #fff;
   font-size: 1.2rem;
   padding-right: 20px;
 }
-main .sec-ban .ban-02 .ban-btn div p:nth-of-type(2) {
+main .sec-ban .ban-02 .ban-btn .more p:nth-of-type(2) {
   padding-right: 0;
 }
-main .sec-ban .ban-02 .ban-btn div p:nth-of-type(2)::before {
+main .sec-ban .ban-02 .ban-btn .more p:nth-of-type(2)::before {
   font-family: "FontAwesome";
   content: "\f105";
   display: inline-block;
   margin: 0;
   padding: 0;
 }
-main .sec-ban .ban-02 .ban-btn div div {
+main .sec-ban .ban-02 .ban-btn .more div {
   display: flex;
   flex-wrap: wrap;
   display: none;
 }
-main .sec-ban .ban-02 .ban-btn div div span {
+main .sec-ban .ban-02 .ban-btn .more div span {
   width: 100%;
   border-top: thin solid #fff;
 }
@@ -1318,20 +1327,29 @@ main .over div.overdiv {
   -webkit-animation: opendiv 0.8s ease forwards;
           animation: opendiv 0.8s ease forwards;
 }
+main .over .exp ul li p.overpp {
+  visibility: visible !important;
+  -webkit-animation: openp 0.8s ease forwards;
+          animation: openp 0.8s ease forwards;
+}
 @-webkit-keyframes openimg {
   0% {
     transform: translateY(100%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 @keyframes openimg {
   0% {
     transform: translateY(100%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0%);
+    opacity: 1;
   }
 }
 @-webkit-keyframes openP {
@@ -1435,6 +1453,19 @@ main div.ani3 {
   }
 }
 @keyframes txt3 {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+main .more.overdiv {
+  visibility: visible !important;
+  -webkit-animation: opendiv 0.8s ease forwards;
+          animation: opendiv 0.8s ease forwards;
+}
+@keyframes opendiv {
   0% {
     transform: translateY(100%);
   }

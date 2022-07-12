@@ -724,6 +724,7 @@ main {
                 li {
                     position: relative;
                     visibility: hidden;
+                    overflow: hidden;
                     width: 49%;
                     margin-bottom: 5px;
                     transform: translateY(100%);
@@ -813,6 +814,7 @@ main {
 
             li {
                 margin-bottom: 30px;
+                overflow: hidden;
 
                 .imgbox {
                     width: 100%;
@@ -1053,6 +1055,7 @@ main {
                     }
 
                     div {
+                        overflow: hidden;
                         h4 {
                             @include M-h4();
                             font-weight: 800;
@@ -1120,10 +1123,12 @@ main {
                     }
                 }
 
-                div {
+                .more {
                     margin-top: 30px;
                     display: flex;
                     align-items: center;
+                    overflow: hidden;
+                    visibility: hidden;
 
                     p {
                         margin: 0;
@@ -1198,10 +1203,12 @@ main {
                     }
                 }
 
-                div {
+                .more {
                     margin-top: 30px;
                     display: flex;
                     align-items: center;
+                    overflow: hidden;
+                    visibility: hidden;
 
                     p {
                         margin: 0;
@@ -1279,10 +1286,16 @@ main {
         animation: opendiv 0.8s ease forwards;
     }
 
+    // exp p
+    .over .exp ul li p.overpp{
+        visibility: visible !important;
+        animation: openp 0.8s ease forwards;
+    }
+
     @keyframes openimg {
     
-        0%{transform: translateY(100%);}
-        100%{transform: translateY(0%);}
+        0%{transform: translateY(100%); opacity: 0;}
+        100%{transform: translateY(0%); opacity: 1;}
         
     }
 
@@ -1349,6 +1362,18 @@ main {
             // opacity: 1;
             transform: translateY(0%);
         }
+    }
+
+    .more.overdiv{
+        visibility: visible !important;
+        animation: opendiv 0.8s ease forwards;
+    }
+
+    @keyframes opendiv {
+    
+        0%{transform: translateY(100%); }
+        100%{transform: translateY(0%);}
+        
     }
 }
 
@@ -1522,4 +1547,6 @@ footer {
             }
         }
     }
+
+
 }

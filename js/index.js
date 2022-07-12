@@ -422,6 +422,7 @@ function MainScroll(h4,div1,div2){
             img = document.querySelectorAll('main section ul li');
             imgP = document.querySelectorAll('main section ul li .pimgbox');
             imgDiv = document.querySelectorAll('main section ul div');
+            openP = document.querySelectorAll('.exp ul li p');
             
             img.forEach(function(v,k){
                 el = img[k].offsetTop;
@@ -439,6 +440,11 @@ function MainScroll(h4,div1,div2){
             imgDiv.forEach(function(v,k){
                 imgDiv[k].classList.add('overdiv');
                 imgDiv[k].style = `animation-delay: 0.${k}s;`;
+            })
+
+            openP.forEach(function(v,k){
+                openP[k].classList.add('overp');
+                openP.style = `animation-delay: 0.${k}s;`;
             })
         });
     }
@@ -465,6 +471,30 @@ function MainScroll(h4,div1,div2){
         });
     })
     }
+
+    function footer(){
+        let div;
+        let el = ''
+
+        window.addEventListener('scroll',function(){
+            div = document.querySelectorAll('.sec-ban .ban-btn .more');
+
+        //     el = div.offsetTop;
+        //     console.log(el)
+
+        //     if(el - winH <= pageYOffset){
+        //         div.classList.add('overdiv');
+        //     }
+        
+        div.forEach(function(v,k){
+            el = div[k].offsetTop;
+            
+            if(el - winH <= pageYOffset){
+                div[k].classList.add('overdiv');
+            }
+        })
+    })
+    }
     
     
     txt1();
@@ -472,6 +502,7 @@ function MainScroll(h4,div1,div2){
     txt3();
     img();
     h2();
+    footer();
 };
 
 
