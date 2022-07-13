@@ -853,6 +853,7 @@ main section .servicese ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
 }
 main section .servicese ul li {
   position: relative;
@@ -861,6 +862,7 @@ main section .servicese ul li {
   width: 49%;
   margin-bottom: 5px;
   transform: translateY(100%);
+  opacity: 0;
 }
 main section .servicese ul li .pimgbox {
   margin: 0;
@@ -924,10 +926,13 @@ main .infer ul {
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow: hidden;
 }
 main .infer ul li {
   margin-bottom: 30px;
   overflow: hidden;
+  transform: translateY(100%);
+  opacity: 0;
 }
 main .infer ul li .imgbox {
   width: 100%;
@@ -1007,6 +1012,7 @@ main .exp-sec .exp-margin .exp ul {
   justify-content: space-between;
   align-items: stretch;
   width: 100%;
+  overflow: hidden;
 }
 main .exp-sec .exp-margin .exp ul li {
   display: flex;
@@ -1014,6 +1020,8 @@ main .exp-sec .exp-margin .exp ul li {
   justify-content: space-around;
   align-items: center;
   width: 33%;
+  transform: translateY(100%);
+  opacity: 0;
 }
 main .exp-sec .exp-margin .exp ul li p {
   width: 80%;
@@ -1056,10 +1064,13 @@ main section .portfolio ul {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  overflow: hidden;
 }
 main section .portfolio ul li {
   width: 49%;
   padding-bottom: 20px;
+  transform: translateY(100%);
+  opacity: 0;
 }
 main section .portfolio ul li .pimgbox {
   width: 100%;
@@ -1110,9 +1121,12 @@ main section .sec-news ul {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  overflow: hidden;
 }
 main section .sec-news ul li {
   width: 49%;
+  transform: translateY(100%);
+  opacity: 0;
 }
 main section .sec-news ul li .pimgbox {
   vertical-align: middle;

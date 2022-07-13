@@ -1,5 +1,5 @@
 //새로고침시 상단으로 이동
-// history.scrollRestoration = "manual"
+history.scrollRestoration = "manual"
 
 //사이트 전체길이
 let maxScrollValue = document.body.offsetHeight - window.innerHeight;
@@ -63,18 +63,23 @@ function clickFun() {
                 });
                 document.documentElement.style = 'overflow:hidden';
                 menuBox.classList.remove('out');
-
+                logoColor.classList.add('aColor');
+                
             } else {
                 document.documentElement.style = 'overflow:auto';
                 menuBox.classList.add('out');
+                logoColor.classList.remove('aColor');
+
             }
 
             menuBox.classList.add('open');
 
             Buger.classList.toggle('active');
-            logoColor.classList.remove('aColor');
+            logoColor.classList.toggle('aColor');
             TxtAni();
+
         });
+        
     }, 300);
 };
 

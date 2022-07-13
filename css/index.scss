@@ -720,6 +720,7 @@ main {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-between;
+                overflow: hidden;
 
                 li {
                     position: relative;
@@ -727,7 +728,7 @@ main {
                     overflow: hidden;
                     width: 49%;
                     margin-bottom: 5px;
-                    transform: translateY(100%);
+                    transform: translateY(100%); opacity: 0;
                     
 
                     .pimgbox {
@@ -810,11 +811,13 @@ main {
             align-items: center;
             flex-wrap: wrap;
             justify-content: space-between;
+            overflow: hidden;
 
 
             li {
                 margin-bottom: 30px;
                 overflow: hidden;
+                transform: translateY(100%); opacity: 0;
 
                 .imgbox {
                     width: 100%;
@@ -903,6 +906,7 @@ main {
                     justify-content: space-between;
                     align-items: stretch;
                     width: 100%;
+                    overflow: hidden;
 
                     li {
                         display: flex;
@@ -910,6 +914,7 @@ main {
                         justify-content: space-around;
                         align-items: center;
                         width: 33%;
+                        transform: translateY(100%); opacity: 0;
 
                         p {
                             width: 80%;
@@ -966,10 +971,12 @@ main {
                 flex-wrap: wrap;
                 justify-content: space-between;
                 align-items: flex-start;
+                overflow: hidden;
 
                 li {
                     width: 49%;
                     padding-bottom: 20px;
+                    transform: translateY(100%); opacity: 0;
 
                     .pimgbox {
                         width: 100%;
@@ -1039,9 +1046,11 @@ main {
                 display: flex;
                 align-items: flex-start;
                 justify-content: space-between;
+                overflow: hidden;
 
                 li {
                     width: 49%;
+                    transform: translateY(100%); opacity: 0;
 
                     .pimgbox {
                         vertical-align: middle;
