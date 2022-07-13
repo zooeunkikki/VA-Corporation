@@ -207,13 +207,139 @@ function MainTxtSplit(s1,s2,t1,t2) {
 
     }
 
+    function exp(){
+        let exph2 = document.querySelector('.exp hgroup h2');
+        const txth2 = exph2.textContent.split(" ");
+
+        let txtBox = [];
+
+        txth2.forEach(function(h2,k) {
+            txtBox += `<span>${h2}</span>`;
+        });
+
+        exph2.innerHTML = txtBox;
+
+        let txt = 0;
+        let elSpan = document.querySelectorAll('.exp hgroup h2 span');
+
+        txtBox = `<div>`;
+        elSpan.forEach(function(span,k) {
+            txt += span.offsetWidth + 6;
+
+            if(txt > window.innerWidth*0.9){
+                txtBox +=`</div><div>`;
+                txt = span.offsetWidth +6;
+
+            }
+
+            txtBox +=`<span>${span.textContent}</span>`;
+        })
+        exph2.innerHTML = txtBox;
+
+    }
+
+    function port(){
+        let exph2 = document.querySelector('.port h2');
+        const txth2 = exph2.textContent.split(" ");
+
+        let txtBox = [];
+
+        txth2.forEach(function(h2,k) {
+            txtBox += `<span>${h2}</span>`;
+        });
+
+        exph2.innerHTML = txtBox;
+
+        let txt = 0;
+        let elSpan = document.querySelectorAll('.port h2 span');
+
+        txtBox = `<div>`;
+        elSpan.forEach(function(span,k) {
+            txt += span.offsetWidth + 6;
+
+            if(txt > window.innerWidth*0.9){
+                txtBox +=`</div><div>`;
+                txt = span.offsetWidth +6;
+
+            }
+
+            txtBox +=`<span>${span.textContent}</span>`;
+        })
+        exph2.innerHTML = txtBox;
+
+    }
+
+    function banner(){
+        let ban = document.querySelector(' .ban-btn hgroup h2');
+        const txth2 = ban.textContent.split(" ");
+
+        let txtBox = [];
+
+        txth2.forEach(function(h2,k) {
+            txtBox +=`<span>${h2}</span>`;
+        })
+        ban.innerHTML = txtBox;
+
+        let elSpan = document.querySelectorAll('.ban-btn hgroup h2 span');
+        
+        let txt = 0;
+        txtBox = `<div>`;
+        elSpan.forEach(function(span,k) {
+            txt = span.offsetWidth + 6;
+
+            if(txt > window.innerWidth){
+                txtBox +=`</div><div>`;
+                txt = span.offsetWidth +6;
+            }
+            txtBox +=`<span>${span.textContent}</span>`;
+        })
+        ban.innerHTML = txtBox;
+
+
+    }
+
+    function banner2(){
+        let ban = document.querySelector('.ban-02 .ban-btn hgroup h2');
+        const txth2 = ban.textContent.split(" ");
+
+        let txtBox = [];
+
+        txth2.forEach(function(h2,k) {
+            txtBox +=`<span>${h2}</span>`;
+        })
+        ban.innerHTML = txtBox;
+
+        let elSpan = document.querySelectorAll('.ban-02 .ban-btn hgroup h2 span');
+        
+        let txt = 0;
+        txtBox = `<div>`;
+        elSpan.forEach(function(span,k) {
+            txt = span.offsetWidth + 6;
+
+            if(txt > window.innerWidth){
+                txtBox +=`</div><div>`;
+                txt = span.offsetWidth +6;
+            }
+            txtBox +=`<span>${span.textContent}</span>`;
+        })
+        ban.innerHTML = txtBox;
+
+
+    }
+
+
+
 
     movebox1();
     movebox2();
+    exp();
+    port();
+    banner();
+    banner2();
 };
 
-//main txt ani
-function MainScroll(){
+//main txt animation
+function MainScroll(h4,div1,div2){
     let WinH;
     winH = window.innerHeight;
 
@@ -221,14 +347,19 @@ function MainScroll(){
     //소제목
     function txt1() {
         let txt1;
+        let el = '';
         window.addEventListener('scroll',function(){
-        txt1 = document.querySelector('main h4');
-        let el;
+        txt1 = document.querySelectorAll(h4);
 
-        el = txt1.offsetTop;
-        if (el - winH <= maxScrollValue) {
-            txt1.classList.add('ani');
+        txt1.forEach(function(v,k){
+            el = txt1[k].offsetTop;
+
+
+        if (el - winH <= pageYOffset) {
+            txt1[k].classList.add('ani');
         }
+
+    });
     })
     }
 
@@ -237,18 +368,25 @@ function MainScroll(){
         let txt2;
         let el = '';
         window.addEventListener('scroll',function(){
-        txt2 = document.querySelectorAll('.movebox1 h2 span');
+        txt2 = document.querySelectorAll(div1);
+
+        span = document.querySelectorAll(div2);
 
         txt2.forEach(function (v, k) {
             el = txt2[k].offsetTop;
 
-            if (el - winH <= maxScrollValue) {
+            if (el - winH <= pageYOffset) {
                 txt2[k].classList.add('ani2');
-                txt2[k].style = `animation-delay: 0.${k}s;`;
+                // txt2[k].style = `animation-delay: 0.${k}s;`;
             }
+        });
+        
+        span.forEach(function(v,k){
+            v.classList.add('open');
         });
     })
     }
+
 
     function txt3() {
         let txt3;
@@ -256,26 +394,116 @@ function MainScroll(){
 
         window.addEventListener('scroll', function () {
             txt3 = document.querySelectorAll('.movebox2 p div');
+            span = document.querySelectorAll('.movebox2 p div span');
+
 
             txt3.forEach(function (v, k) {
                 el = txt3[k].offsetTop;
                 // console.log(txt3[k])
                 
-                if (el - winH < pageYOffset) {
+                if (el - winH <= pageYOffset) {
                     txt3[k].classList.add('ani3');
-                    txt3[k].style = `animation-delay: 0.${k}s;`;
+                    // txt3[k].style = `animation-delay: 0.${k}s;`;
                 }
                 // console.log(el - winH <= maxScrollValue)
             });
+
+            span.forEach(function(v,k){
+                v.classList.add('open');
+            });
         })
+    }
+
+    function img(){
+        let img;
+        let el = '';
+
+        window.addEventListener('scroll',function(){
+            img = document.querySelectorAll('main section ul li');
+            imgP = document.querySelectorAll('main section ul li .pimgbox');
+            imgDiv = document.querySelectorAll('main section ul div');
+            openP = document.querySelectorAll('.exp ul li p');
+            
+            img.forEach(function(v,k){
+                el = img[k].offsetTop;
+
+                if(el - winH <= pageYOffset){
+                    img[k].classList.add('over');
+                }
+            });
+
+            imgP.forEach(function(v,k){
+                imgP[k].classList.add('overp');
+                imgP[k].style = `animation-delay: 0.${k}s;`;
+            });
+
+            imgDiv.forEach(function(v,k){
+                imgDiv[k].classList.add('overdiv');
+                imgDiv[k].style = `animation-delay: 0.${k}s;`;
+            })
+
+            openP.forEach(function(v,k){
+                openP[k].classList.add('overp');
+                openP.style = `animation-delay: 0.${k}s;`;
+            })
+        });
+    }
+
+    function h2() {
+        let txt2;
+        let el = '';
+        window.addEventListener('scroll',function(){
+        txt2 = document.querySelectorAll('main h2 div');
+
+        span = document.querySelectorAll('main  h2 div span');
+
+        txt2.forEach(function (v, k) {
+            el = txt2[k].offsetTop;
+
+            if (el - winH <= pageYOffset) {
+                txt2[k].classList.add('ani2');
+                // txt2[k].style = `animation-delay: 0.${k}s;`;
+            }
+        });
+        
+        span.forEach(function(v,k){
+            v.classList.add('open');
+        });
+    })
+    }
+
+    function bannerDiv(){
+        let div;
+        let el = ''
+
+        window.addEventListener('scroll',function(){
+            div = document.querySelectorAll('.sec-ban .ban-btn .more');
+
+        //     el = div.offsetTop;
+        //     console.log(el)
+
+        //     if(el - winH <= pageYOffset){
+        //         div.classList.add('overdiv');
+        //     }
+        
+        div.forEach(function(v,k){
+            el = div[k].offsetTop;
+            
+            if(el - winH <= pageYOffset){
+                div[k].classList.add('overdiv');
+            }
+        })
+    })
     }
     
     
     txt1();
     txt2();
     txt3();
+    img();
+    h2();
+    bannerDiv();
 };
-
 
 
 
@@ -285,7 +513,7 @@ function init() {
     ifFun();
     clickFun();
     MainTxtSplit('.movebox1 h2','.movebox1 h2 span','.movebox2 p','.movebox2 p span');
-    MainScroll();
+    MainScroll('main h4' ,'.movebox1 h2 div','.movebox1 h2 div span','main h2 div', 'main h2 div span');
 }
 window.addEventListener('load', init);
 
