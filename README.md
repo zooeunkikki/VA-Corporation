@@ -25,8 +25,9 @@ Site View
 
 ![스크린샷 2022-08-10 오후 6 49 53](https://user-images.githubusercontent.com/106298540/194198911-34139d24-f0e7-4fe3-a863-dacfef066083.png)
 ![스크린샷 2022-08-10 오후 6 50 52](https://user-images.githubusercontent.com/106298540/194198921-52b3e927-afb5-47dc-92f1-176acbc548a6.png)
-![스크린샷 2022-08-10 오후 6 50 34](https://user-images.githubusercontent.com/106298540/194198961-d2f18456-d19f-47ee-b094-cb630e4206fc.png)
-![스크린샷 2022-08-10 오후 6 50 24](https://user-images.githubusercontent.com/106298540/194198979-2942d905-ebee-4da3-be20-82e5301fca91.png)
+
+![편집1 복사본](https://user-images.githubusercontent.com/106298540/194200639-f0ae3913-9701-4594-b10e-e9dcfb6d2522.png)
+![22](https://user-images.githubusercontent.com/106298540/194201224-288a9cdf-f9b9-4f75-ac53-4a2efddda59d.png)
 
 
 <br>
