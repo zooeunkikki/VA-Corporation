@@ -13,6 +13,7 @@
 기능 소개:
 ![wireframe_va](https://user-images.githubusercontent.com/106298540/194198793-94a32e30-5586-4316-80a1-f43ee26aa87f.png)
 1_메인화면 슬라이드 기능 활용
+
 2_split 기능을 이용하여 박스에 묶여있는 텍스트를 나누었습니다.
 
 <br>
